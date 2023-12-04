@@ -1,13 +1,17 @@
 import { theme } from './utils/Theme'
-import { MainBody } from "./GlobalStyles"
+import { Container, MainBody } from "./styles/GlobalStyles"
 import { ThemeProvider } from "styled-components"
+import Showcase from './components/Showcase'
 
 const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <MainBody />
-     <h1>Nemoto Dev portfolio</h1>
+      <MainBody>
+        <Container>
+          <Showcase />
+        </Container>
+      </MainBody>
     </ThemeProvider>
   )
 }

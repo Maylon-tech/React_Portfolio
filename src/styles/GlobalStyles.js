@@ -20,7 +20,7 @@ export const PaddingContainer = styled.div`
     padding-right: ${({ right }) => right};
 `
 
-export const FlexContaine = styled.div`
+export const FlexContainer = styled.div`
     display: flex;
     justify-content: ${({ justify }) => justify};
     align-items: ${({ align }) => align};
@@ -56,11 +56,21 @@ export const BlueText = styled.span`
 `
 
 export const ParaText = styled(PaddingContainer)`
-    
+    color: ${({ theme }) => theme.colors.para_text_color};
+    line-height: 2rem;
 `
 
 export const IconContainer = styled.div`
     font-size: ${({ size }) => size};
     cursor: pointer;
-    color: ${( color, theme ) => }size;
+    color: ${( {color, theme} ) => {
+        switch(color){
+            case 'white':
+                return theme.colors.white;
+            case 'blue':
+                return theme.colors.secondary;
+            default:
+                return;
+        }
+    }};
 `
